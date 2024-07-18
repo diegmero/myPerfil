@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="project-detail">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ proyecto.imagen_principal.url }}" alt="{{ proyecto.titulo }}" class="img-fluid main-image mb-4">
+            <h1 class="project-title">{{ proyecto.titulo }}</h1>
+            <div class="project-description">
+                {{ proyecto.descripcion|linebreaks }}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="project-info card">
+                <div class="card-body">
+                    <h3 class="card-title">Tecnologías utilizadas</h3>
+                    <ul class="tech-list">
+                        {% for tech in tecnologias_list %}
+                            <li class="tech-item">{{ tech }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="project-links">
+                        {% if proyecto.url %}
+                            <a href="{{ proyecto.url }}" class="btn btn-primary btn-block mb-2" target="_blank">Ver proyecto en vivo</a>
+                        {% endif %}
+                        {% if proyecto.github %}
+                            <a href="{{ proyecto.github }}" class="btn btn-secondary btn-block" target="_blank">Ver código en GitHub</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-5 mb-4">Galería del proyecto</h3>
+    <div class="row gallery">
+        {% for imagen in proyecto.imagenes.all %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <a href="{{ imagen.imagen.url }}" class="gallery-item" data-lightbox="project-gallery">
+                    <img src="{{ imagen.imagen.url }}" alt="Imagen del proyecto" class="img-fluid">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+{% endblock %}

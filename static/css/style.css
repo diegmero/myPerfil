@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilos para las tarjetas de proyectos */
+
+.project-card {
+    transition: transform 0.3s ease-in-out;
+    width: 350px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-img-container {
+    height: 200px; /* Ajusta esta altura según tus necesidades */
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-body {
+    height: 200px; /* Ajusta esta altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* número de líneas a mostrar */
+    -webkit-box-orient: vertical;
+}
+
+/* Estilos para la página de detalle del proyecto */
+.project-detail .main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.project-info {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tech-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tech-item {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.3rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-links .btn {
+    width: 100%;
+}
+
+.gallery .gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery .gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Puedes añadir más estilos aquí */

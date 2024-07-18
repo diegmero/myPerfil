@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio | Ingenierodiego{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-6 fw-bold">Bienvenid@ a mi portafolio</h1>
+    <p class="lead">Soy un desarrollador e ingeniero de sistemas apasionado por la tecnología.</p>
+    <hr class="my-4">
+    <p>Explora mis proyectos y habilidades para conocer más sobre mi.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'lista_proyectos' %}" role="button">Ver Proyectos</a>
+</div>
+{% endblock %}
